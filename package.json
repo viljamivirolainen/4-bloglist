@@ -2,10 +2,13 @@
   "name": "bloglist",
   "version": "1.0.0",
   "description": "bloglist backend & testing ",
-  "main": "node index.js",
+  "main": "nodemon index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Viljami Virolainen",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
 }
