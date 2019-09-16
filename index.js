@@ -4,6 +4,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
+require('dotenv').config()
 
 const blogSchema = mongoose.Schema({
   title: String,
@@ -14,7 +15,8 @@ const blogSchema = mongoose.Schema({
 
 const Blog = mongoose.model('Blog', blogSchema)
 
-const mongoUrl = 'mongodb://localhost/bloglist'
+const mongoPwd = process.env.PASSWORD
+const mongoUrl = 'mongodb+srv://bloglistuser:'+ mongoPwd +'@cluster0-anxxp.mongodb.net/test?retryWrites=true&w=majority'
 mongoose.connect(mongoUrl, { useNewUrlParser: true })
 
 app.use(cors())
