@@ -4,7 +4,8 @@
   "description": "bloglist backend & testing ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "watch": "nodemon index.js",
     "test": "jest --verbose"
   },
   "author": "Viljami Virolainen",
