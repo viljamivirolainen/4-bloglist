@@ -25,7 +25,7 @@ const mostBlogs = blogs => {
     const authorCounts = _.countBy(blogs, 'author')
     authorWithMostBlogs = _.max(Object.keys(authorCounts), o => authorCounts[o])
     return blogs.length === 0
-    ? "Empty list - no author with most blogs as there were no blogs"
+    ? {}
     : { author : authorWithMostBlogs, blogs : authorCounts[authorWithMostBlogs]}
 }
 
@@ -40,7 +40,7 @@ const mostLikes = blogs => {
     const likesByAuthor = _.mapValues(grouped, arr => arr.map(blog => blog.likes).reduce((total,likes)=>total+likes),0)  
     const authorWithMost = _.maxBy(Object.keys(likesByAuthor), o => likesByAuthor[o])
     return blogs.length === 0
-    ? "Empty list - no author with most likes as there were no blogs and no authors"
+    ? {}
     : {author:authorWithMost, likes:likesByAuthor[authorWithMost]}
 }
   module.exports = {

@@ -62,9 +62,9 @@ describe('most blogs', () => {
         __v: 0
       }  
     ]
-    test(('of empty list is a string telling that there is a problem'), () => {
+    test(('of empty list is an empty object'), () => {
       const result = listHelper.mostBlogs([])
-      expect(result).toEqual("Empty list - no author with most blogs as there were no blogs")
+      expect(result).toEqual({})
     })
     test('when list has only one blog returns the author of that', () => {
       const result = listHelper.mostBlogs(listWithOneBlog)
