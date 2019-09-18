@@ -1,6 +1,6 @@
 const listHelper = require('../utils/list_helper')
 
-describe('most blogs', () => {
+describe('most likes', () => {
     const listWithOneBlog = [
       {
         _id: '5a422aa71b54a676234d17f8',
@@ -63,15 +63,15 @@ describe('most blogs', () => {
       }  
     ]
     test(('of empty list is a string telling that there is a problem'), () => {
-      const result = listHelper.mostBlogs([])
-      expect(result).toEqual("Empty list - no author with most blogs as there were no blogs")
+      const result = listHelper.mostLikes([])
+      expect(result).toEqual("Empty list - no author with most likes as there were no blogs and no authors")
     })
     test('when list has only one blog returns the author of that', () => {
-      const result = listHelper.mostBlogs(listWithOneBlog)
-      expect(result).toEqual({author:'Edsger W. Dijkstra', blogs:1})
+      const result = listHelper.mostLikes(listWithOneBlog)
+      expect(result).toEqual({author:'Edsger W. Dijkstra',likes:5})
     })
-    test('of larger list returns the author with most blogs', () => {
-        const result = listHelper.mostBlogs(blogs)
-        expect(result).toEqual({author:"Robert C. Martin",blogs:3})
+    test('of larger list returns the author with most likes', () => {
+        const result = listHelper.mostLikes(blogs)
+        expect(result).toEqual({author:"Edsger W. Dijkstra",likes:17})
       })
   }) 
